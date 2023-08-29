@@ -76,9 +76,8 @@ const [postItem,setPostItem]= React.useState(intialPostItem)
   const update_data = async function () {
     try {
         const result = await axios(URL_GET_Posts);
-        setPosts(result.data.results);
         // setPosts(result.data);
-        console.log(result.data.results)
+        console.log(result.data)
     } catch (error) {
         console.log(error);
     }
