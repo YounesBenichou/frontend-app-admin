@@ -8,7 +8,6 @@ import Nav from './nav';
 import UserPage from '../../pages/UserPage';
 import CoursePage from '../../pages/CoursePage'
 import BlogPage from '../../pages/BlogPage';
-import GamificationPage from '../../pages/GamificationPage';
 import CourseDetail from '../../pages/CourseDetail';
 // ----------------------------------------------------------------------
 
