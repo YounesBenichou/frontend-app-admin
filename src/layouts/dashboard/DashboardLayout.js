@@ -52,7 +52,6 @@ export default function DashboardLayout() {
             <Route path="/admin/courses/modify"><CourseDetail /></Route>
             <Route path="/admin/courses/"><CoursePage /></Route>
             <Route path="/admin/blog"><BlogPage /></Route>
-            <Route path="/admin/product"><GamificationPage /></Route>
       </Switch>
       </Main>
     </StyledRoot>
