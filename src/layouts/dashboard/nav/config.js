@@ -41,6 +41,39 @@ const navConfig = [
   //   path: '/404',
   //   icon: icon('ic_disabled'),
   // },
+  
 ];
-
+// const MENU_OPTIONS = [
+//     {
+//       label: 'Accueil',
+//       icon: 'eva:home-fill',
+//       link: config.LMS_BASE_URL
+//     },
+//     {
+//       label: 'Portail d\'administration',
+//       icon: 'eva:home-fill',
+//       link: config.ADMIN_URL + '/admin/'
+//     },
+//     {
+//       label: 'Profile',
+//       icon: 'eva:person-fill',
+//       link: config.ACCOUNT_PROFILE_URL+'/profile/u/'+getAuthenticatedUser().username,
+//     },
+//     {
+//       label: 'Compte',
+//       icon: 'eva:person-fill',
+//       link: config.ACCOUNT_SETTINGS_URL,
+//     },
+//     {
+//       label: 'Mes accomplissement',
+//       icon: 'eva:person-fill',
+//       link: config.GAMIFICATION_URL+'/gamification/',
+//     },
+//     {
+//       label: 'Se déconnecter',
+//       icon: 'eva:person-fill',
+//       link: config.LOGOUT_URL,
+//     },
+    
+//   ];
 export default navConfig;
