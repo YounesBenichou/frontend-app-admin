@@ -78,7 +78,6 @@ const [postItem,setPostItem]= React.useState(intialPostItem)
         const result = await axios(URL_GET_Posts);
         setPosts(result.data.results);
         // setPosts(result.data);
-        console.log(result.data.results)
     } catch (error) {
         console.log(error);
     }
@@ -99,7 +98,6 @@ const [postItem,setPostItem]= React.useState(intialPostItem)
   useEffect(() => {
     update_data();
     setPostItem({...postItem, 'author':userId})
-    console.log(getConfig().LMS_BASE_URL + "/api/posts/v1/posts/")
   }, []);
   
   return (

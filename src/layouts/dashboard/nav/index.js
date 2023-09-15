@@ -49,7 +49,6 @@ export default function Nav({ openNav, onCloseNav }) {
   const { authenticatedUser } = useContext(AppContext);
   const user_data = useContext(AppContext);
 
-  console.log(user_data)
   if (authenticatedUser) {
     username = authenticatedUser.username;
   }

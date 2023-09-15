@@ -101,7 +101,7 @@ export default function CourseDetail() {
   // consts 
   const URL_GET_Org = getConfig().LMS_BASE_URL + "/api/organizations/v0/organizations/";
   // const URL_POST_CreateFormation = getConfig().LMS_BASE_URL.slice(0,7) + 'studio.'+  getConfig().LMS_BASE_URL.slice(7) + "/course/"
-  const URL_POST_CreateFormation = 'http://studio.local.overhang.io:8001/course/'
+  const URL_POST_CreateFormation = getConfig().STUDIO_BASE_URL + '/course/'
   // usestate
   const [organisations,setOrganisations]= React.useState([])
   const [onSumbition,setOnSumbition]= React.useState(false)
@@ -122,7 +122,6 @@ export default function CourseDetail() {
   const getOrganisations = async ()=>{
     try{
       const result = await getAuthenticatedHttpClient().get(URL_GET_Org)
-      console.log(result.data)
       let i =1
       let new_list = []
       while (i<=result.data.num_pages){
@@ -135,7 +134,6 @@ export default function CourseDetail() {
         });
         i = i + 1
       } 
-      console.log('organisations',organisations)
     }catch(error){
       console.log(error)
     }
@@ -144,7 +142,7 @@ export default function CourseDetail() {
   const createFormation = async() =>{
     try{
       setOnSumbition(true)
-      const result = await axios.get('http://studio.local.overhang.io:8001/csrf/api/v1/token')
+      const result = await axios.get(getConfig().STUDIO_BASE_URL +'/csrf/api/v1/token')
       const headers = { 
           'Content-Type': 'application/json',
           'X-CSRFToken': result.data.csrfToken, // Include the CSRF token
@@ -174,7 +172,7 @@ export default function CourseDetail() {
   const modifyFormation = async() =>{
     try{
       setOnSumbition(true)
-      const result = await axios.get('http://studio.local.overhang.io:8001/csrf/api/v1/token')
+      const result = await axios.get(getConfig().STUDIO_BASE_URL + '/csrf/api/v1/token')
       const headers = { 
           'Content-Type': 'application/json',
           'X-CSRFToken': result.data.csrfToken, // Include the CSRF token
@@ -238,7 +236,6 @@ export default function CourseDetail() {
       let self_paced = location.state.pacing == 'self' ? true : false
       setFormation({...location.state,'self_paced': self_paced,'display_name':location.state.name})
       setEditMode(true)
-      console.log('location',location.state)
     }
   },[])
   
@@ -414,7 +411,7 @@ export default function CourseDetail() {
                 maxRows={4}
                 id="short-description"
                 name="short-description"
-                label="short description"
+                label="Description courte"
                 fullWidth
                 value={formation.short_description}
                 onChange={(e) => {
@@ -493,7 +490,7 @@ export default function CourseDetail() {
               {EditMode && 
               <Button variant="contained" onClick={
                 ()=>{
-                  window.open(`http://studio.local.overhang.io:8001/course/${formation.course_id}`, '_blank');
+                  window.open(getConfig().STUDIO_BASE_URL + `/course/${formation.course_id}`, '_blank');
                 }
               } sx={{background: palette.INFO , '&:hover':{
                         background: palette.INFO

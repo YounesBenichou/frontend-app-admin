@@ -3,7 +3,7 @@ import { filter } from 'lodash';
 import { sentenceCase } from 'change-case';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { getAuthenticatedHttpClient } from '@edx/frontend-platform/auth';
+import { getAuthenticatedHttpClient} from '@edx/frontend-platform/auth';
 
 // @mui
 import {
@@ -92,9 +92,8 @@ export default function CoursePage() {
   const history = useHistory();
   // Consts
 
-  const URL_GET_Courses = getConfig().LMS_BASE_URL + "/api/courses/v1/courses/";
-  const URL_POST_DeleteFormation = 'http://studio.local.overhang.io:8001/course/'
-
+  const URL_GET_Courses = getConfig().LMS_BASE_URL + "/api/courses/v1/courses/?admin=true";
+  const URL_POST_DeleteFormation = getConfig().STUDIO_BASE_URL + '/course/';
   // UseStates 
   const [courses, setCourses] = useState([])
   const [requestResult, setRequestResult] = useState({
@@ -108,7 +107,7 @@ export default function CoursePage() {
       let i =1
       let new_list = []
       while (i<=result.data.pagination.num_pages){
-        axios.get(URL_GET_Courses+"?page="+i).then((response) => {
+        axios.get(URL_GET_Courses+"&page="+i).then((response) => {
           new_list = [...new_list, ...response.data.results]; 
           setCourses(new_list)
         })
@@ -127,7 +126,7 @@ export default function CoursePage() {
   }
 
   const toStudio = ()=>{
-    window.open(`http://studio.local.overhang.io:8001/course/${currentSelectRow.course_id}`, '_blank');
+    window.open(getConfig().STUDIO_BASE_URL + `/course/${currentSelectRow.course_id}`, '_blank');
   }
   const modifyFormation = ()=>{
     history.push({ 
@@ -139,7 +138,7 @@ export default function CoursePage() {
 
   const deleteFormation = async ()=>{
     try{
-      const result = await axios.get('http://studio.local.overhang.io:8001/csrf/api/v1/token')
+      const result = await axios.get(getConfig().STUDIO_BASE_URL +'/csrf/api/v1/token')
       const headers = { 
           'Content-Type': 'application/json',
           'X-CSRFToken': result.data.csrfToken, // Include the CSRF token
@@ -268,7 +267,7 @@ export default function CoursePage() {
     courses && 
     <>
       <Helmet>
-        <title> Course | Minimal UI </title>
+        <title> Formation | Admin </title>
       </Helmet>
 
       <Container>
@@ -295,7 +294,7 @@ export default function CoursePage() {
         <Card>
           <FormationListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} />
 
-          {/* <Scrollbar> */}
+          <Scrollbar>
             <TableContainer sx={{ minWidth: 800 }}>
               <Table>
                 <UserListHead
@@ -380,7 +379,7 @@ export default function CoursePage() {
                 )}
               </Table>
             </TableContainer>
-          {/* </Scrollbar> */}
+          </Scrollbar>
 
           <TablePagination
             rowsPerPageOptions={[5, 10, 25]}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // @mui
 import { styled } from '@mui/material/styles';
 //
@@ -37,6 +37,7 @@ const Main = styled('div')(({ theme }) => ({
 
 export default function DashboardLayout() {
   const [open, setOpen] = useState(false);
+  
   return (
     <StyledRoot>
 
@@ -46,11 +47,11 @@ export default function DashboardLayout() {
 
       <Main>
       <Switch>
-            <Route path="/admin/user"><UserPage /></Route>
             <Route path="/admin/courses/create"><CourseDetail /></Route>
             <Route path="/admin/courses/modify"><CourseDetail /></Route>
             <Route path="/admin/courses/"><CoursePage /></Route>
-            <Route path="/admin/blog"><BlogPage /></Route>
+            <Route path="/"><CoursePage /></Route>
+
       </Switch>
       </Main>
     </StyledRoot>

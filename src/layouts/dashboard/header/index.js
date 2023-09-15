@@ -6,6 +6,7 @@ import { Box, Stack, AppBar, Toolbar, IconButton, Button } from '@mui/material';
 import { bgBlur } from '../../../utils/cssStyles';
 // components
 //
+import Iconify from '../../../components/iconify';
 import AccountPopover from './AccountPopover';
 import NotificationsPopover from './NotificationsPopover';
 import ButtonGroup from '@mui/material/ButtonGroup';
@@ -60,6 +61,17 @@ export default function Header({ onOpenNav }) {
         display:'flex',
         justifyContent: 'space-between',
       }}>
+        
+        <IconButton
+          onClick={onOpenNav}
+          sx={{
+            mr: 1,
+            color: 'text.primary',
+            display: { lg: 'none' },
+          }}
+        >
+          <Iconify icon="eva:menu-2-fill" />
+        </IconButton>
         <Stack
             direction="row"
             alignItems="center"
@@ -83,7 +95,7 @@ export default function Header({ onOpenNav }) {
               sm: 1,
             }}
           >
-          <NotificationsPopover />
+          {/* <NotificationsPopover /> */}
           <AccountPopover />
         </Stack>
       </StyledToolbar>
