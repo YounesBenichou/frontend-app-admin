@@ -80,7 +80,7 @@ export default function Header({ onOpenNav }) {
               sm: 1,
             }}
           >
-        <img width={120} src={'/assets/djezzy_academy.jpg'}></img>
+        <img width={120} src={'./assets/djezzy_academy.jpg'}></img>
         
         
         </Stack>

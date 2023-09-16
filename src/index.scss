@@ -42,3 +42,63 @@ body,
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+// Djezzy academy
+.back_icon{
+  background: url('../public/assets/icons/ic_back.png');
+  // background: url('');
+  width: 100px;
+  height: 100px;
+  transform: scale(0.5);
+}
+
+
+.back_icon{
+  background: url('../public/assets/icons/ic_back.png');
+  // background: url('');
+  width: 100px;
+  height: 100px;
+  transform: scale(0.5);
+}
+
+.ic_analytics{
+  padding: 0 40px 0 20px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-color: currentColor;
+  mask: url('../public/assets/icons/navbar/ic_analytics.svg') no-repeat center / contain;
+  -webkit-mask: url('../public/assets/icons/navbar/ic_analytics.svg') no-repeat center / contain;
+}
+
+.ic_user{
+  padding: 0 40px 0 20px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-color: currentColor;
+  mask: url('../public/assets/icons/navbar/ic_user.svg') no-repeat center / contain;
+  -webkit-mask: url('../public/assets/icons/navbar/ic_user.svg') no-repeat center / contain;
+}
+
+
+
+.ic_blog{
+  padding: 0 40px 0 20px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-color: currentColor;
+  mask: url('../public/assets/icons/navbar/ic_blog.svg') no-repeat center / contain;
+  -webkit-mask: url('../public/assets/icons/navbar/ic_blog.svg') no-repeat center / contain;
+}
+
+.ic_settings{
+  padding: 0 40px 0 20px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-color: currentColor;
+  mask: url('../public/assets/icons/navbar/ic_settings.svg') no-repeat center / contain;
+  -webkit-mask: url('../public/assets/icons/navbar/ic_settings.svg') no-repeat center / contain;
+}

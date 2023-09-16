@@ -9,27 +9,22 @@ const navConfig = [
   {
     title: 'dashboard',
     path: '/dashboard/app',
-    icon: icon('ic_analytics'),
-  },
-  {
-    title: 'Utilisateur',
-    path: '/admin/user',
-    icon: icon('ic_user'),
+    icon: 'ic_analytics',
   },
   {
     title: 'Formation',
     path: '/admin/courses',
-    icon: icon('ic_user'),
+    icon: 'ic_user',
   },
   {
     title: 'articles',
     path: '/admin/blog',
-    icon: icon('ic_blog'),
+    icon: 'ic_blog',
   },
   {
     title: 'paramètres',
     path: '/admin/settings',
-    icon: icon('ic_settings'),
+    icon: 'ic_settings',
   },
   // {
   //   title: 'login',
