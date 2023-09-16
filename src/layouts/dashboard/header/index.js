@@ -11,6 +11,7 @@ import AccountPopover from './AccountPopover';
 import NotificationsPopover from './NotificationsPopover';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import palette from '../../../theme/palette';
+import { getConfig } from '@edx/frontend-platform';
 
 // ----------------------------------------------------------------------
 
@@ -80,7 +81,7 @@ export default function Header({ onOpenNav }) {
               sm: 1,
             }}
           >
-        <img width={120} src={'./assets/djezzy_academy.jpg'}></img>
+        <img width={120} src={getConfig().LOGO_URL}></img>
         
         
         </Stack>
